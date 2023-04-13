@@ -13,10 +13,11 @@ _main:                                  ## @main
 	subq	$16, %rsp
 	leaq	L_.str(%rip), %rdi
 	leaq	L_.str.1(%rip), %rsi
+	leaq	L_.str.2(%rip), %rdx
 	movb	$0, %al
 	callq	_printf
-	leaq	L_.str.2(%rip), %rdi
-	leaq	L_.str.3(%rip), %rsi
+	leaq	L_.str.3(%rip), %rdi
+	leaq	L_.str.4(%rip), %rsi
 	movl	%eax, -4(%rbp)                  ## 4-byte Spill
 	movb	$0, %al
 	callq	_printf
@@ -30,15 +31,18 @@ _main:                                  ## @main
                                         ## -- End function
 	.section	__TEXT,__cstring,cstring_literals
 L_.str:                                 ## @.str
-	.asciz	"Hello %s\n"
+	.asciz	"Hello %s %s\n"
 
 L_.str.1:                               ## @.str.1
 	.asciz	"yejin"
 
 L_.str.2:                               ## @.str.2
-	.asciz	"Current time: %s\n"
+	.asciz	"yang"
 
 L_.str.3:                               ## @.str.3
-	.asciz	"10:50:02"
+	.asciz	"Current time: %s\n"
+
+L_.str.4:                               ## @.str.4
+	.asciz	"15:38:35"
 
 .subsections_via_symbols

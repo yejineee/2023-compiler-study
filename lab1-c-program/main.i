@@ -542,8 +542,12 @@ extern int __vsnprintf_chk (char * restrict, size_t, int, size_t,
 
 
 
+
+
+
+
 int main()
 {
-  printf("Hello %s\n", "yejin");
-  printf("Current time: %s\n", "10:50:02");
+  printf("Hello %s %s\n", "yejin", "yang");
+  printf("Current time: %s\n", "15:38:35");
 }
